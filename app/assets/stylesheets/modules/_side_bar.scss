@@ -1,26 +1,33 @@
+*{
+  box-sizing: border-box;
+}
 .side-bar {
   box-sizing: border-box;
-  color: $white;
+  color:white;
   width: 300px;
   .header {
     background-color: $side_blue_dark;
     height: 100px;
     line-height: 100px;
     padding: 0 20px;
+    align-items: center;
+    display: flex;
+    
     &__name {
-      display: inline-block;
       font-size: $side_header_font;
       font-weight: bold;
+      // float: left;
     }
     &__lists {
-      display: inline-block;
-      float: right;
+      
+      margin-left: auto;
       .list {
         display: inline-block;
-      }
-      .icon {
-        color: $white;
-        font-size: $side_header_font;
+        
+        .icon {
+          color: white;
+          font-size: $side_header_font;
+        }
       }
     }
   }
