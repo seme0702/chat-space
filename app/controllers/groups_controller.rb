@@ -3,7 +3,6 @@ class GroupsController < ApplicationController
   def index
   end
 
-
   def new
     @group = Group.new
     @group.users << current_user
@@ -23,10 +22,8 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:name, { :user_ids => [] })
   end
 
-
   def edit
   end
-
 
   def update
     if @group.update(group_params)
@@ -36,10 +33,7 @@ class GroupsController < ApplicationController
     end
   end
 
-
   def set_group
     @group = Group.find(params[:id])
   end
-
-
 end
