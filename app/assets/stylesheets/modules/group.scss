@@ -76,32 +76,37 @@ li {
     &--right {
       float: right;
       width: 70%;
+
     }
   }
+  .chat-group-user {
+    width: 200;
+    padding: 0 15px;
+    line-height: 50px;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    &:after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+    &__name {
+      float: left;
+    }
+    &__btn {
+      float: right;
+      display: inline-block;
+      cursor: pointer;
+      &--add {
+        color: #38aef0;
+      }
+      &--remove {
+        color: #f05050;
+      }
+    }
+  }
+
 }
 
-.chat-group-user {
-  padding: 0 15px;
-  line-height: 50px;
-  font-size: 14px;
-  border-bottom: 1px solid #ddd;
-  &:after {
-    content: "";
-    clear: both;
-    display: block;
-  }
-  &__name {
-    float: left;
-  }
-  &__btn {
-    float: right;
-    display: inline-block;
-    cursor: pointer;
-    &--add {
-      color: #38aef0;
-    }
-    &--remove {
-      color: #f05050;
-    }
-  }
-}
+
+
