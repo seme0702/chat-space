@@ -31,11 +31,12 @@
 
         - if @users.present?
           - @users.each do |user|
-            .chat-group-user.clearfix.js-chat-member{id: "#{user.id}_list"}
-              %input{name: "group[user_ids][]", type: "hidden", value: user.id}
-              %p.chat-group-user__name
-                = user.name
-              .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn{id: "#{user.id}_delete"} 削除
+            - unless user == current_user
+              .chat-group-user.clearfix.js-chat-member{id: "#{user.id}_list"}
+                %input{name: "group[user_ids][]", type: "hidden", value: user.id}
+                %p.chat-group-user__name
+                  = user.name
+                .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn{id: "#{user.id}_delete"} 削除
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left

@@ -8,17 +8,17 @@
         .left-header__title
           = @group.name
         %ul.left-header__members
-          = "Member： #{@members}"
+          = "Menbers: #{@members}"
       .right-header
         .right-header__button
-          = link_to "Edit", edit_group_path(@group)
+          = link_to "Edit", edit_group_path(@group.id),class:"right-header__button__edit"
     .messages
-      = render @messages
+      = render partial: 'message', collection: @messages
     .form
-      = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      = form_for [@group, @message],html: { class:'form__message'} do |f|
+        = f.text_field :content, class: 'form__message__a ',placeholder: 'type a message',id: "message-form"
         .form__mask
           = f.label :image, class: 'form__mask__image' do
             = fa_icon 'picture-o', class: 'icon'
             = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
+        = f.submit 'Send', class: 'form__submit ' 

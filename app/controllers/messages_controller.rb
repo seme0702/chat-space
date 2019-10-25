@@ -36,7 +36,7 @@ class MessagesController < ApplicationController
     group.users.each do |member|
       members << member.name
     end
-    members = members.join("")
+    members = members.join(" ")
   end
 
 end
